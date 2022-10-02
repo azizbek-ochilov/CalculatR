@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 System.Console.WriteLine("Please, enter first number:");
 int firstNumber = Convert.ToInt32(Console.ReadLine());
 System.Console.WriteLine("Please, enter second number:");
