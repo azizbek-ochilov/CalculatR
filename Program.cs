@@ -1,4 +1,13 @@
 ﻿using System;
+
+// do while loop
+string password = "";
+do 
+{
+   System.Console.WriteLine("Enter password:");
+   password = Console.ReadLine();
+}while(password != "pa$$w0rd");
+
 System.Console.WriteLine("Please, enter first number:");
 int firstNumber = Convert.ToInt32(Console.ReadLine());
 System.Console.WriteLine("Enter operation(+ - * / %)");
@@ -83,3 +92,23 @@ System.Console.WriteLine(massage1);
 System.Console.WriteLine(massage2);
 System.Console.WriteLine(massage3);
 System.Console.WriteLine(massage4);
+
+// while loop
+int counter = 1;
+while(counter<firstNumber)
+{
+    if (counter %2 ==0)
+    {
+        System.Console.WriteLine(counter);
+    }
+    counter++;
+}
+
+for(int iteration = 0; iteration<=10;iteration++)
+{
+   for(int i = 0; i<=10; i++)
+   {
+       System.Console.WriteLine($"{iteration} x {i} = {iteration*i}");
+   }
+   System.Console.WriteLine("");
+}  
