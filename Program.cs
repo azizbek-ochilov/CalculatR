@@ -5,6 +5,8 @@ System.Console.WriteLine("Enter operation(+ - * / %)");
 string operation = Console.ReadLine();
 System.Console.WriteLine("Please, enter second number:");
 int secondNumber = Convert.ToInt32(Console.ReadLine());
+
+// 1. switch 
 switch(operation)
 {
     case "+":
@@ -22,8 +24,23 @@ switch(operation)
     case "%":
         System.Console.WriteLine($"{firstNumber} % {secondNumber} = {firstNumber%secondNumber} ");
         break;
-
+    default: 
+        System.Console.WriteLine(" Operation not found!");
+        break;
 }
+
+// 2. switch expression
+string result = operation switch
+{
+    "+" => $"{firstNumber} + {secondNumber} = {firstNumber+secondNumber} ",
+    "-" => $"{firstNumber} - {secondNumber} = {firstNumber+secondNumber} ",
+    "*" => $"{firstNumber} * {secondNumber} = {firstNumber*secondNumber} ",
+    "/" => $"{firstNumber} / {secondNumber} = {firstNumber/secondNumber} ",
+    "%" => $"{firstNumber} % {secondNumber} = {firstNumber%secondNumber} ",
+    _   => $" Operation not found!"
+};
+System.Console.WriteLine(result);
+
 
 if(firstNumber>secondNumber)
 {
