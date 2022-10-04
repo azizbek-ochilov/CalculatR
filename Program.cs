@@ -40,4 +40,8 @@ string massage4 =
         : "1st and 2nd numbers are negative";
 
 
+System.Console.WriteLine(massage);
+System.Console.WriteLine(massage1);
+System.Console.WriteLine(massage2);
+System.Console.WriteLine(massage3);
 System.Console.WriteLine(massage4);
