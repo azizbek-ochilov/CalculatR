@@ -26,5 +26,18 @@ string massage1 =
     secondNumber >=0
         ? "2nd number is positive."
         : "2nd number is negative.";
-System.Console.WriteLine(massage);
-System.Console.WriteLine(massage1);
+string massage2 = 
+    !(firstNumber >= 0) 
+        ? "1st number is not positive."
+        : "1st number is not negative.";
+string massage3 = 
+    firstNumber >= 0 && secondNumber>=0 
+        ? "1st and 2nd numbers are positive."
+        : "There is a negative in the entered number";
+string massage4 = 
+    firstNumber >= 0 || secondNumber>=0
+        ? "There is a positive in the entered number."
+        : "1st and 2nd numbers are negative";
+
+
+System.Console.WriteLine(massage4);
