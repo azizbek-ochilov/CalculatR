@@ -1,114 +1,17 @@
 ﻿using System;
-
-// do while loop
-string password = "";
-do 
+using CalculatR.Classes;
+internal class Program
 {
-   System.Console.WriteLine("Enter password:");
-   password = Console.ReadLine();
-}while(password != "pa$$w0rd");
-
-System.Console.WriteLine("Please, enter first number:");
-int firstNumber = Convert.ToInt32(Console.ReadLine());
-System.Console.WriteLine("Enter operation(+ - * / %)");
-string operation = Console.ReadLine();
-System.Console.WriteLine("Please, enter second number:");
-int secondNumber = Convert.ToInt32(Console.ReadLine());
-
-// 1. switch 
-switch(operation)
-{
-    case "+":
-        System.Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber+secondNumber} ");
-        break;
-    case "-":
-        System.Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber-secondNumber} ");
-        break;
-    case "*":
-        System.Console.WriteLine($"{firstNumber} x {secondNumber} = {firstNumber*secondNumber} ");
-        break;
-    case "/":
-        System.Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber/secondNumber} ");
-        break;
-    case "%":
-        System.Console.WriteLine($"{firstNumber} % {secondNumber} = {firstNumber%secondNumber} ");
-        break;
-    default: 
-        System.Console.WriteLine(" Operation not found!");
-        break;
-}
-
-// 2. switch expression
-string result = operation switch
-{
-    "+" => $"{firstNumber} + {secondNumber} = {firstNumber+secondNumber} ",
-    "-" => $"{firstNumber} - {secondNumber} = {firstNumber+secondNumber} ",
-    "*" => $"{firstNumber} * {secondNumber} = {firstNumber*secondNumber} ",
-    "/" => $"{firstNumber} / {secondNumber} = {firstNumber/secondNumber} ",
-    "%" => $"{firstNumber} % {secondNumber} = {firstNumber%secondNumber} ",
-    _   => $" Operation not found!"
-};
-System.Console.WriteLine(result);
-
-
-if(firstNumber>secondNumber)
-{
-    System.Console.WriteLine($"1st number is greater than 2nd number.");
-}
-else if (firstNumber==secondNumber)
-{
-    System.Console.WriteLine("1st number and 2nd number are equal!");
-}
-else 
-{
-    System.Console.WriteLine($"1st number is less than 2nd number.");
-}
-
-//ternary operations
-string massage = 
-    firstNumber >= 0 
-        ? "1st number is positive."
-        : "1st number is negative.";
-string massage1 = 
-    secondNumber >=0
-        ? "2nd number is positive."
-        : "2nd number is negative.";
-string massage2 = 
-    !(firstNumber >= 0) 
-        ? "1st number is not positive."
-        : "1st number is not negative.";
-string massage3 = 
-    firstNumber >= 0 && secondNumber>=0 
-        ? "1st and 2nd numbers are positive."
-        : "There is a negative in the entered number";
-string massage4 = 
-    firstNumber >= 0 || secondNumber>=0
-        ? "There is a positive in the entered number."
-        : "1st and 2nd numbers are negative";
-
-
-System.Console.WriteLine(massage);
-System.Console.WriteLine(massage1);
-System.Console.WriteLine(massage2);
-System.Console.WriteLine(massage3);
-System.Console.WriteLine(massage4);
-
-// while loop
-int counter = 1;
-while(counter<firstNumber)
-{
-    if (counter %2 ==0)
+    private static void Main(string[] args)
     {
-        System.Console.WriteLine(counter);
+        Security security = new Security();
+        Calculator calculator = new Calculator();
+        Projects project = new Projects();
+        security.CheakPassword();
+        calculator.AskVariables();
+        calculator.SolveWithSwitch();
+        calculator.SolveWithSwitchExpression();
+        calculator.DisplayInequality();
+        project.TimesTable();    
     }
-    counter++;
 }
-
-for(int iteration = 0; iteration<=10;iteration++)
-{
-   for(int i = 0; i<=10; i++)
-   {
-       System.Console.WriteLine($"{iteration} x {i} = {iteration*i}");
-   }
-   System.Console.WriteLine("");
-}  
