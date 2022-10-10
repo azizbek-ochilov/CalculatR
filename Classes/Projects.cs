@@ -2,6 +2,7 @@ namespace CalculatR.Classes
 {
     public class Projects
     {
+        public DateTimeOffset CreatedDate { get; set; }
         public void TimesTable()
         {
             for (int iteration = 0; iteration <= 10; iteration++)
@@ -13,5 +14,6 @@ namespace CalculatR.Classes
                 Console.WriteLine("");
             }
         }
+
     }
 }
